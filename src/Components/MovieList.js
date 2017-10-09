@@ -7,6 +7,7 @@ const renderMovie = movie => (<li key={movie.id}>
     </div>
 </li>);
 
-export default ({movies}) => (<ul className="MovieList">
+export default ({movies, loading, hasMore, fetchMore}) => (<ul className="MovieList">
     {movies.map(renderMovie)}
+    {(!loading && hasMore) ? <button onClick={fetchMore}>Get more movies!</button> : ''}
 </ul>);

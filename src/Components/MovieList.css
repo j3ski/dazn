@@ -1,0 +1,11 @@
+.MovieList {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.MovieList li {
+    min-width: 300px;
+}

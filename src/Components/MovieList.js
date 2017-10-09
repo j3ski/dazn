@@ -1,4 +1,5 @@
 import React from 'react';
+import './MovieList.css';
 
 const renderMovie = movie => (<li key={movie.id}>
     <div>
@@ -6,6 +7,6 @@ const renderMovie = movie => (<li key={movie.id}>
     </div>
 </li>);
 
-export default ({movies}) => (<ul>
+export default ({movies}) => (<ul className="MovieList">
     {movies.map(renderMovie)}
 </ul>);

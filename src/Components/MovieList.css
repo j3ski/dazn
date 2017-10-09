@@ -6,6 +6,11 @@
     padding: 0;
 }
 
-.MovieList li {
-    min-width: 300px;
+.Movie {
+    height: 400px;
+    width: 200px;
+}
+.Movie img {
+    height: 60%;
+    min-height: 60%;
 }

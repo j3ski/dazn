@@ -29,6 +29,9 @@ export default class extends React.Component {
             }));
     }
     fetchMore() {
+        if(this.state.loading || !(this.state.page < this.state.totalPages)) {
+            return;
+        }
         this.setState({loading: true});
         fetchMovies(this.state.query, this.state.page + 1)
             .then(({results}) => this.setState(({movies, page}) => ({
@@ -41,7 +44,7 @@ export default class extends React.Component {
         return (
             <div className="App">
                 <SearchForm onChange={(value) => this.onSearchChange(value)}/>
-                <MovieList movies={this.state.movies} loading={this.state.loading} hasMore={this.state.page < this.state.totalPages} fetchMore={() => this.fetchMore()}/>
+                <MovieList movies={this.state.movies} loading={this.state.loading} fetchMore={() => this.fetchMore()}/>
             </div>
         )
     }

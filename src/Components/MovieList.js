@@ -10,7 +10,9 @@ const renderMovie = movie => (<li key={movie.id}>
     </div>
 </li>);
 
-export default ({movies, loading, fetchMore}) => (<ul className="MovieList">
+export default ({movies, fetchMore}) => (<ul className="MovieList">
     {movies.map(renderMovie)}
-     <Intersection handler={fetchMore}/>
+    <li key="intersection">
+        <Intersection handler={fetchMore}/>
+    </li>
 </ul>);

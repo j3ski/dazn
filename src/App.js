@@ -7,7 +7,6 @@ import fetchMovies from './utils/fetchMovies';
 import debounce from './utils/debounce';
 import uniq from './utils/uniq';
 
-
 export default class extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +43,7 @@ export default class extends React.Component {
         return (
             <div className="App">
                 <SearchForm onChange={(value) => this.onSearchChange(value)}/>
-                <MovieList movies={this.state.movies} loading={this.state.loading} fetchMore={() => this.fetchMore()}/>
+                <MovieList movies={this.state.movies} fetchMore={() => this.fetchMore()}/>
             </div>
         )
     }
